@@ -1,2 +1,3 @@
 # OOP-II--Assignment-2
-Implementing OOP Solid principles
+Implementing OOP Design principles
+
