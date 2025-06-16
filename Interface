@@ -5,11 +5,15 @@ public interface Human {
 }
 
 package Interface;
+
+public interface Work {
+    public void jobTitle ();
+}
+
 import java.util.Scanner;
-public class Woman implements Human{
+public class Woman implements Human, Work {
     Scanner sc = new Scanner(System.in);
-    public String name;
-    public String food;
+
     public void getName(){
         System.out.println("Enter name: ");
         String name = sc.next();
@@ -23,13 +27,29 @@ public class Woman implements Human{
         String food = sc.next();
         System.out.println("She eats " + food);
     }
+    public void jobTitle () {
+        System.out.println("What does she do for work: ");
+        String job_title = sc.next();
+        System.out.println("She works as a: " + job_title);
+    }
 
     public static void main(String[] args) {
         Woman woman1 = new Woman();
         woman1.getName();;
         woman1.eat();
         woman1.sleep();
+        woman1.jobTitle();
     }
 }
 
+public class Doctor extends Woman {//Breaks the rule
+    public static void main (String[] args) {
+        Woman doctor = new Woman();
+        doctor.getName();
+        doctor.eat();
+        doctor.sleep();
+        doctor.jobTitle();
+    }
+
+}
 
